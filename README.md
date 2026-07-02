@@ -22,23 +22,25 @@ Hay tres formas, según la herramienta que uses. Elige la tuya.
 
 ### Forma 1 · Claude Code (la más cómoda)
 
-Sirve para cualquiera que use Claude Code, seas de producto, diseño o desarrollo.
-No necesitas saber programar.
+**Instalación:**
 
-**Preparación (una vez):**
+1. Clona el repositorio en tu ordenador. En la terminal (CMD, PowerShell, o terminal de tu IDE):
 
-1. Instala Claude Code si aún no lo tienes.
-2. Descarga este repositorio a tu ordenador. Dos opciones:
-   - Botón verde "Code" en GitHub y "Download ZIP", luego descomprime.
-   - O, si usas Git: `git clone <URL-del-repo>`
-3. Abre la carpeta del repositorio en Claude Code.
+```bash
+git clone https://github.com/Educaria-Tecno/alexia-design-system-beta.git
+cd alexia-design-system-beta
+```
 
-**Uso (cada vez):**
+2. Abre la carpeta en Claude Code.
 
-Escribe:
+3. Listo. La skill `/prototipar` ya está disponible.
+
+**Uso:**
+
+Escribe en Claude Code:
 
 ```
-/prototipar "una pantalla de comunicados con buscador y tabla de mensajes"
+/prototipar "una pantalla de comunicados con tabla de mensajes"
 ```
 
 La skill te ofrece **tres caminos** (tú eliges):
@@ -51,11 +53,7 @@ La skill te ofrece **tres caminos** (tú eliges):
 
 3. **Ve directo:** Si tienes prisa, escribe "ve directo" y genera en el acto, sin preguntas.
 
-Luego lee la librería y los patrones, y te devuelve un HTML en el estilo de Alexia. Lo abres
-en el navegador y lo ves. Si aportaste contexto, guarda un resumen en `briefs/` de tu clon
-(queda solo en tu ordenador).
-
-No hay que configurar nada más: al abrir el repositorio, la skill `/prototipar` aparece sola.
+La skill genera un HTML en el estilo de Alexia. Lo abres en el navegador y lo ves. Si aportaste contexto, guarda un resumen en `briefs/` de tu clon (queda solo en tu ordenador).
 
 ---
 
@@ -105,9 +103,3 @@ Para ajustar un resultado, pide cambios concretos:
 - Es un borrador para validar, no producción. La implementación viva vive en el código.
 - La IA no inventa colores ni componentes. Si algo falta en el sistema, lo dirá y propondrá
   lo más cercano. Si necesitas algo que no existe, avisa para valorarlo y añadirlo.
-
-## Mantenimiento
-
-Si cambia un color o un componente, se actualiza `kit/assets/alexia-ds.css` en este
-repositorio (y se re-sube al Proyecto de claude.ai si lo usas). Así todas las pantallas
-nuevas reflejan el cambio. Este repositorio es la fuente compartida.
