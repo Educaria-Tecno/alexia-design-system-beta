@@ -1,0 +1,250 @@
+/* ===========================================================================
+   TOKENS REALES (snapshot de Estilo/propio/web-component/colors.css y fonts.css)
+   Fecha del snapshot: 2026-11-03.
+   Los NOMBRES son los reales del codigo (--color-*, --rf-*, --alert-*,
+   --font-*, --line-height-*). Un prototipo que use estas variables llega al
+   desarrollador con los mismos nombres que va a usar en produccion.
+   Archivo generado copiando las lineas de los dos CSS reales, sin retocarlas.
+   Si cambian en el TFS, regenerar este archivo.
+   ========================================================================= */
+
+/* ---- colors.css ---- */
+:root, :host {
+    /* == 1. PRIMITIVOS (escala completa de tono; valores del DS) ============ */
+    /* Gris (sistema de UI): neutros */
+    --color-grey-50: #FFFFFF;
+    --color-grey-100: #FDFDFD;
+    --color-grey-200: #F8FAFD;
+    --color-grey-300: #F4F5F7;
+    --color-grey-400: #E8E9EB;
+    --color-grey-500: #DFE1E6;
+    --color-grey-600: #767676; /* texto muted: 4.54:1 en blanco (AA) */
+    --color-grey-700: #5C5C5C; /* texto secundario: 7.80:1 en blanco (AA) */
+    --color-grey-800: #333333; /* texto principal */
+    --color-grey-900: #111111;
+
+    /* Azul (marca): accion */
+    --color-blue-50: #E8F2F8; /* (test)  fondo alerta info */
+    --color-blue-100: #E1EDF8;
+    --color-blue-200: #D3E3F2; /* (test)  borde alerta info */
+    --color-blue-300: #91B3D7;
+    --color-blue-400: #4C82BA;
+    --color-blue-500: #285A92; /* primario; contraste blanco 7.08:1 AAA */
+    --color-blue-600: #09488C; /* hover del primario + (test) texto alerta info */
+    --color-blue-700: #1A3D66;
+    --color-blue-800: #153252; /* fondo del panel de acciones rapidas */
+    --color-blue-900: #10273F;
+
+    /* Verde (marca): exito */
+    --color-green-50: #EDF7EE; /* fondo alerta success */
+    --color-green-100: #DDF8EB;
+    --color-green-200: #D4EDD6; /* borde alerta success */
+    --color-green-300: #B9DBA7;
+    --color-green-400: #9DC877;
+    --color-green-500: #82B548; /* verde de marca/semaforo (lleva texto oscuro) */
+    --color-green-600: #71A850;
+    --color-green-700: #4E7D36; /* green primario; contraste blanco 4.87:1 AA */
+    --color-green-800: #3E652C; /* texto alerta success; 6.4:1 sobre green-50 (AA) */
+    --color-green-900: #2F4E22;
+
+    /* Amarillo (marca): aviso */
+    --color-yellow-50: #FFFCE0;
+    --color-yellow-100: #FEF7D2;
+    --color-yellow-200: #FDF0A6;
+    --color-yellow-300: #FBE77A; /* borde alerta warning */
+    --color-yellow-400: #F5D83E;
+    --color-yellow-500: #EEC147;
+    --color-yellow-600: #EBB851; /* aviso; LLEVA TEXTO OSCURO (con blanco no pasa) */
+    --color-yellow-700: #CC9E43;
+    --color-yellow-800: #B07B1A;
+    --color-yellow-900: #7A4E14; /* texto de alerta warning */
+
+    /* Cyan (marca): */
+    --color-cyan-50: #EAF6FA;
+    --color-cyan-100: #E1F3F8;
+    --color-cyan-200: #D3EDF5; /* borde del foco (rf-color-border-focus) */
+    --color-cyan-300: #97D7EA;
+    --color-cyan-400: #5BC0DE; /* cyan de referencia Alexia (semaforo info) */
+    --color-cyan-500: #3F96B4;
+    --color-cyan-600: #1E7AA5; /* cyan primario; contraste blanco 4.79:1 AA */
+    --color-cyan-700: #2C697D;
+    --color-cyan-800: #235363;
+    --color-cyan-900: #1B3E4B;
+
+    /* Morado: descubrimiento */
+    --color-purple-50: #F1EFFA; /* fondo alerta news */
+    --color-purple-100: #E8E6F7;
+    --color-purple-200: #DAD6F2; /* borde alerta news */
+    --color-purple-300: #B3AAE4;
+    --color-purple-400: #6F61B6; /* purple primario; contraste blanco 5.17:1 AA */
+    --color-purple-500: #6352C7;
+    --color-purple-600: #5949B2;
+    --color-purple-700: #4E4380;
+    --color-purple-800: #3F3666; /* texto alerta news; 8.59:1 sobre purple-50 (AAA) */
+    --color-purple-900: #31294D;
+
+    /* Rojo: error */
+    --color-red-50: #FEF0F0; /* fondo alerta error */
+    --color-red-100: #FBE5E6;
+    --color-red-200: #FBD3D3; /* borde alerta error */
+    --color-red-300: #F0A6A6;
+    --color-red-400: #E47777;
+    --color-red-500: #D94A4A;
+    --color-red-600: #D92D20; /* primitivo libre, sin semántico apuntando (blanco 4.8:1 AA) */
+    --color-red-700: #BE2237; /* red primario (danger); contraste blanco 6.05:1 AA -- tambien texto sobre red-50, 7.21:1 AAA */
+    --color-red-800: #8F2222;
+    --color-red-900: #7F1D1D;
+
+    /* == 2. SEMANTICOS (rol) :: apuntan a los primitivos ==================== */
+    /* Los nombres NO cambian (los componentes ya los consumen). Cambia solo a que
+     primitivo apuntan, para alinear con la escala del DS. */
+
+    /* -- accion / marca */
+    --rf-color-primary: var(--color-blue-500);
+    --rf-color-primary-rgb: 40, 90, 146; /* sincronizado con --color-blue-500 #285A92 */
+
+    /* -- texto y borde neutro */
+    --rf-color-text: var(--color-grey-800);
+    --rf-color-text-sec: var(--color-grey-700);
+    --rf-color-label: var(--color-grey-800);
+    --rf-color-border: var(--color-grey-500);
+    --rf-color-border-focus: var(--color-cyan-200);
+    --rf-color-border-light: var(--color-grey-400);
+
+    /* -- fondos neutros */
+    --rf-bg-white: var(--color-grey-50);
+    --rf-bg-light: var(--color-grey-100);
+    --rf-bg-normal: var(--color-grey-200);
+    --rf-bg-dark: var(--color-grey-300);
+    --rf-bg-readonly: var(--color-grey-200);
+    --rf-text-readonly: var(--color-grey-600);
+
+    /* -- estado: danger */
+    --color-status-danger: var(--color-red-700);
+    --color-status-danger-subtle: var(--color-red-50);
+    --color-status-danger-text: var(--color-red-700);
+    --color-status-danger-border: var(--color-red-200);
+    --rf-color-error: var(--color-status-danger);
+    --alert-bg-error: var(--color-status-danger-subtle);
+    --alert-border-error: var(--color-status-danger-border);
+    --alert-text-error: var(--color-status-danger-text);
+
+    /* -- estado: success */
+    --rf-color-success: var(--color-green-700);
+    --alert-bg-success: var(--color-green-50);
+    --alert-border-success: var(--color-green-200);
+    --alert-text-success: var(--color-green-800); /* 6.4:1 sobre green-50 (AA) */
+
+    /* -- estado: warning */
+    --rf-color-warning: var(--color-yellow-600); /* OJO: el texto encima debe ser oscuro, no blanco */
+    --alert-bg-warning: var(--color-yellow-50);
+    --alert-border-warning: var(--color-yellow-300);
+    --alert-text-warning: var(--color-yellow-900);
+
+    /* -- estado: info */
+    --alert-bg-info: var(--color-blue-50);
+    --alert-border-info: var(--color-blue-200);
+    --alert-text-info: var(--color-blue-600);
+
+    /* -- estado: discovery */
+    --color-status-discovery: var(--color-purple-400);
+    --color-status-discovery-subtle: var(--color-purple-50);
+    --color-status-discovery-text: var(--color-purple-800);
+    --color-status-discovery-border: var(--color-purple-200);
+    --alert-bg-news: var(--color-status-discovery-subtle);
+    --alert-border-news: var(--color-status-discovery-border);
+    --alert-text-news: var(--color-status-discovery-text);
+
+    /* -- estado: default (neutro) */
+    --alert-bg-default: var(--color-grey-300);
+    --alert-border-default: var(--color-grey-400);
+    --alert-text-default: var(--color-grey-700); /* == --rf-color-text-sec, 7.80:1 en blanco (AA) */
+    --alert-divider: #00000014;
+
+    /* -- otros */
+    --ar-bg-color: var(--color-blue-800);
+    --color-black: var(--color-grey-900);
+}
+
+/* ---- fonts.css (solo tokens, sin @font-face) ---- */
+:root, :host {
+    --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-family-ui:      'Nunito', var(--font-family-base);
+    --font-family-reading: 'Roboto', var(--font-family-base);
+    --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+    --font-size-100: 0.75rem;   /* 12px  XS   << ABSORBE  12 / 12.48 (9 decl) */
+    --font-size-200: 0.875rem;  /* 14px  S    << ABSORBE  12.8 / 13 / 13.6 / 14 / 14.4 (36 decl, el mayor) */
+    --font-size-300: 1rem;      /* 16px  M    << ABSORBE  15 / 15.2 / 16 (11 decl) */
+    --font-size-400: 1.25rem;   /* 20px  L    << ABSORBE  17.6 / 18 / 20 (6 decl) */
+    --font-size-500: 1.5rem;    /* 24px  XL   << ABSORBE  22.4 / 24 (7 decl) */
+    --font-size-600: 1.75rem;   /* 28px  2XL  << ABSORBE  28 (1 decl) */
+    --font-weight-regular:   400;
+    --font-weight-medium:    500;
+    --font-weight-semibold:  600;
+    --font-weight-bold:      700;
+    --font-weight-extrabold: 800;
+    --line-height-100: 1.333; /* 12 -> caja 16 */
+    --line-height-200: 1.429; /* 14 -> caja 20 */
+    --line-height-300: 1.5;   /* 16 -> caja 24 */
+    --line-height-400: 1.4;   /* 20 -> caja 28 */
+    --line-height-500: 1.333; /* 24 -> caja 32 */
+    --line-height-600: 1.286; /* 28 -> caja 36 */
+    --letter-spacing-tighter: -0.02em; /* display 24 -> -0.48px */
+    --letter-spacing-tight:   -0.01em; /* title 16   -> -0.16px */
+    --letter-spacing-none:     0;      /* todo lo demas */
+    --font-family-display:    var(--font-family-ui);
+    --font-size-display:      var(--font-size-500);         /* 24  XL */
+    --font-weight-display:    var(--font-weight-extrabold); /* 800 */
+    --line-height-display:    var(--line-height-500);       /* caja 32 */
+    --letter-spacing-display: var(--letter-spacing-tighter);
+    --font-family-title:    var(--font-family-ui);
+    --font-size-title:      var(--font-size-300);      /* 16  M */
+    --font-weight-title:    var(--font-weight-bold);   /* 700 */
+    --line-height-title:    var(--line-height-300);    /* caja 24 */
+    --letter-spacing-title: var(--letter-spacing-tight);
+    --font-family-section:    var(--font-family-ui);
+    --font-size-section:      var(--font-size-200);        /* 14  S */
+    --font-weight-section:    var(--font-weight-semibold); /* 600 */
+    --line-height-section:    var(--line-height-200);      /* caja 20 */
+    --letter-spacing-section: var(--letter-spacing-none);
+    --font-family-label:    var(--font-family-ui);
+    --font-size-label:      var(--font-size-200);        /* 14  S */
+    --font-weight-label:    var(--font-weight-semibold); /* 600 */
+    --line-height-label:    var(--line-height-200);      /* caja 20 */
+    --letter-spacing-label: var(--letter-spacing-none);
+    --font-family-subtitle:    var(--font-family-ui);
+    --font-size-subtitle:      var(--font-size-200);       /* 14  S */
+    --font-weight-subtitle:    var(--font-weight-regular);
+    --line-height-subtitle:    var(--line-height-200);     /* caja 20 */
+    --letter-spacing-subtitle: var(--letter-spacing-none);
+    --font-family-body:    var(--font-family-reading);
+    --font-size-body:      var(--font-size-200);       /* 14  S */
+    --font-weight-body:    var(--font-weight-regular);
+    --line-height-body:    var(--line-height-200);     /* caja 20 */
+    --letter-spacing-body: var(--letter-spacing-none);
+    --font-family-input:    var(--font-family-body);
+    --font-size-input:      var(--font-size-body);
+    --font-weight-input:    var(--font-weight-body);
+    --line-height-input:    var(--line-height-body);
+    --letter-spacing-input: var(--letter-spacing-body);
+    --font-family-help:    var(--font-family-body);
+    --font-size-help:      var(--font-size-100);       /* 12  XS */
+    --font-weight-help:    var(--font-weight-regular);
+    --line-height-help:    var(--line-height-100);     /* caja 16 */
+    --letter-spacing-help: var(--letter-spacing-none);
+    --font-family-code:    var(--font-family-mono);
+    --font-size-code:      var(--font-size-200);       /* 14  S */
+    --font-weight-code:    var(--font-weight-regular);
+    --line-height-code:    var(--line-height-200);     /* caja 20 */
+    --letter-spacing-code: var(--letter-spacing-none);
+}
+
+/* ---- internal-layout.css (solo radios) ---- */
+:root, :host {
+    --radius-none:   0;
+    --radius-sm:     4px;    /* badges, chips */
+    --radius-md:     8px;    /* inputs, tarjetas */
+    --radius-lg:     12px;   /* botones, modales, contenedores */
+    --radius-full:   9999px; /* pildoras, range */
+    --radius-circle: 50%;    /* avatares, thumb, radio */
+}
