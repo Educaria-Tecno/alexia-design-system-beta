@@ -8,7 +8,10 @@ rápido, sin partir de cero. Es un borrador vivo, no la versión final de produc
 
 | Archivo | Qué es |
 |---|---|
-| `kit/assets/alexia-ds.css` | La librería de estilos: colores, tipografía, componentes, espaciado |
+| `kit/assets/alexia-ds.css` | La librería de estilos: componentes y clases del kit (importa `tokens-reales.css`) |
+| `kit/assets/tokens-reales.css` | Los tokens con los nombres reales del código: colores, tipografía, radios |
+| `kit/mapa-wc.md` | Qué Web Component real corresponde a cada patrón de pantalla |
+| `kit/handover-plantilla.md` | Plantilla del documento de entrega para desarrollo |
 | `kit/alexia-testing.html` | 17 vistas de Alexia ya montadas, la referencia de patrones |
 | `design-system-beta.md` | Los principios y criterios de diseño (el porqué) |
 | `instrucciones-ia.md` | El texto que le das a la IA para que trabaje en patrón Alexia |
@@ -53,18 +56,21 @@ La skill te ofrece **tres caminos** (tú eliges):
 
 3. **Ve directo:** Si tienes prisa, escribe "ve directo" y genera en el acto, sin preguntas.
 
-La skill genera un HTML en el estilo de Alexia. Lo abres en el navegador y lo ves. Si aportaste contexto, guarda un resumen en `briefs/` de tu clon (queda solo en tu ordenador).
+La skill genera un HTML en el estilo de Alexia, con los nombres reales de tokens, y un handover (`<nombre>.handover.md`, al lado del HTML) que dice con qué Web Components reales se monta la pantalla. Abres el HTML en el navegador y lo ves; el handover es lo que le pasas a desarrollo. Si aportaste contexto, guarda un resumen en `briefs/` de tu clon (queda solo en tu ordenador).
 
 ---
 
 ### Forma 2 · Otra IA (ChatGPT, Gemini, etc.)
 
-1. Descarga del repositorio estos tres archivos:
+1. Descarga del repositorio estos seis archivos:
    - `kit/assets/alexia-ds.css`
+   - `kit/assets/tokens-reales.css`
    - `kit/alexia-testing.html`
+   - `kit/mapa-wc.md`
+   - `kit/handover-plantilla.md`
    - `design-system-beta.md`
 2. Abre la IA que uses y empieza una conversación.
-3. Sube (adjunta) los tres archivos.
+3. Sube (adjunta) los seis archivos.
 4. Copia y pega el texto de `instrucciones-ia.md`.
 5. Pide la pantalla que quieras. Ejemplo:
    > "Crea una pantalla de calificaciones por alumno, con filtros por evaluación."
@@ -77,13 +83,32 @@ Ideal si no usas Claude Code. Requiere plan Team o Enterprise para compartir con
 
 1. Entra en `claude.ai/projects` y crea un Proyecto (por ejemplo "Alexia · Prototipado").
 2. En "Set project instructions", pega el texto de `instrucciones-ia.md`.
-3. En "Knowledge" (el "+"), sube los tres archivos:
-   `alexia-ds.css`, `alexia-testing.html`, `design-system-beta.md`.
+3. En "Knowledge" (el "+"), sube los seis archivos:
+   `alexia-ds.css`, `tokens-reales.css`, `alexia-testing.html`, `mapa-wc.md`,
+   `handover-plantilla.md`, `design-system-beta.md`.
 4. Comparte el Proyecto con el equipo.
 5. Cualquiera abre el Proyecto, pide una pantalla, y la IA ya responde en patrón Alexia,
    sin subir nada cada vez.
 
 ---
+
+## Cómo actualizar
+
+El kit cambia con el tiempo (por ejemplo, cuando cambian los tokens o los componentes del
+código). Cada forma de uso se actualiza distinto:
+
+- **Forma 1 (Claude Code):** en la carpeta de tu clon, ejecuta `git pull`. La skill vive dentro
+  del repositorio, así que se actualiza sola. Si no clonaste (descargaste un zip), vuelve a
+  descargarlo.
+- **Forma 2 (otra IA):** vuelve a descargar los seis archivos y súbelos otra vez en la
+  conversación. Una conversación antigua sigue con los archivos viejos.
+- **Forma 3 (Claude web):** en el Proyecto, sustituye los seis archivos de "Knowledge" por
+  los nuevos y vuelve a pegar `instrucciones-ia.md` en las instrucciones del Proyecto.
+
+Un HTML que ya generaste no se actualiza: es una copia del momento en que lo creaste.
+
+Para que los colores se vean, `alexia-ds.css` y `tokens-reales.css` tienen que estar juntos
+en la misma carpeta `assets/`, al lado de tu HTML. La primera importa la segunda.
 
 ## Cómo pedir bien
 
